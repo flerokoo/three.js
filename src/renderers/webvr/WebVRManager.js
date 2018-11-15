@@ -62,6 +62,8 @@ function WebVRManager( renderer ) {
 
 	var currentSize, currentPixelRatio;
 
+	this.minRenderWidth = 1024;
+
 	function onVRDisplayPresentChange() {
 
 		if ( isPresenting() ) {
@@ -69,6 +71,15 @@ function WebVRManager( renderer ) {
 			var eyeParameters = device.getEyeParameters( 'left' );
 			var renderWidth = eyeParameters.renderWidth * framebufferScaleFactor;
 			var renderHeight = eyeParameters.renderHeight * framebufferScaleFactor;
+
+			var forcedRenderWidth = 1024;
+
+			// checking if renderWidth is less than minimum for readable text
+			if(renderWidth < forcedRenderWidth) {
+				var ratio = forcedRenderWidth / renderWidth;
+				renderWidth = forcedRenderWidth;
+				renderHeight = Math.round(renderHeight * ratio);
+			}
 
 			currentPixelRatio = renderer.getPixelRatio();
 			currentSize = renderer.getSize();

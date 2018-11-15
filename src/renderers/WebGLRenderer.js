@@ -1153,7 +1153,7 @@ function WebGLRenderer( parameters ) {
 
 		if ( vr.enabled ) {
 
-			vr.submitFrame();
+			//vr.submitFrame();
 
 		}
 
