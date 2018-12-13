@@ -108,6 +108,8 @@ Object3D.prototype = Object.assign( Object.create( EventDispatcher.prototype ), 
 
 	isObject3D: true,
 
+	onFrameEnter: function () {},
+
 	onBeforeRender: function () {},
 	onAfterRender: function () {},
 

@@ -76,7 +76,13 @@ function WebGLState( gl, extensions, utils, capabilities ) {
 
 		return {
 
+			overrideDepthFunc: null,
+			overrideDepthTest: null,
+			overrideDepthMask: null,
+
 			setTest: function ( depthTest ) {
+				
+				if ( this.overrideDepthTest !== null ) depthTest = this.overrideDepthTest;
 
 				if ( depthTest ) {
 
@@ -92,6 +98,8 @@ function WebGLState( gl, extensions, utils, capabilities ) {
 
 			setMask: function ( depthMask ) {
 
+				if ( this.overrideDepthMask !== null ) depthMask = this.overrideDepthMask;
+
 				if ( currentDepthMask !== depthMask && ! locked ) {
 
 					gl.depthMask( depthMask );
@@ -102,6 +110,8 @@ function WebGLState( gl, extensions, utils, capabilities ) {
 			},
 
 			setFunc: function ( depthFunc ) {
+
+				if ( this.overrideDepthFunc !== null ) depthFunc = this.overrideDepthFunc;
 
 				if ( currentDepthFunc !== depthFunc ) {
 
