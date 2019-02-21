@@ -291,6 +291,7 @@ function WebGLRenderer( parameters ) {
 		_this.extensions = extensions;
 		_this.properties = properties;
 		_this.renderLists = renderLists;
+		_this.renderStates = renderStates;
 		_this.state = state;
 		_this.info = info;
 

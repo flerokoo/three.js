@@ -72,7 +72,9 @@ function WebVRManager( renderer ) {
 			var renderWidth = eyeParameters.renderWidth * framebufferScaleFactor;
 			var renderHeight = eyeParameters.renderHeight * framebufferScaleFactor;
 
-			var forcedRenderWidth = 1024;
+			var forcedRenderWidth = this.minRenderWidth;
+
+			console.log("Default Render Buffer Size: " + renderWidth * 2 + ',' + renderHeight);
 
 			// checking if renderWidth is less than minimum for readable text
 			if(renderWidth < forcedRenderWidth) {
@@ -81,8 +83,12 @@ function WebVRManager( renderer ) {
 				renderHeight = Math.round(renderHeight * ratio);
 			}
 
+			console.log("Forced Render Buffer Size: " + renderWidth * 2 + ',' + renderHeight);
+
 			currentPixelRatio = renderer.getPixelRatio();
 			currentSize = renderer.getSize();
+
+			
 
 			renderer.setDrawingBufferSize( renderWidth * 2, renderHeight, 1 );
 

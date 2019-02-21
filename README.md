@@ -10,6 +10,9 @@ three.js
 _WebGLRenderer.render()_  
 Removed `WebVRManager.submitFrame()` call at the end of `WebGLRenderer.render()`. This change allows rendering multiple scenes from multiple cameras in VR (but don't forget to call `WebVRManager.submitFrame()` after all your scenes are rendered).
 
+_WebGLRenderer.renderStates_ exposed
+
+
   
 ### WebVRManager
 
