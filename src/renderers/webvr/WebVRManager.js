@@ -78,7 +78,7 @@ function WebVRManager( renderer ) {
 			var forcedRenderWidth = scope.minRenderWidth;
 
 			console.log("Forced render width is: " + forcedRenderWidth );
-			console.log("Default Render Buffer Size: " + renderWidth * 2 + ',' + renderHeight );
+			console.log("Default Render Buffer Size: " + renderWidth + ',' + renderHeight );
 
 			// checking if renderWidth is less than minimum for readable text
 			if(renderWidth < 2 * forcedRenderWidth) {
@@ -87,7 +87,7 @@ function WebVRManager( renderer ) {
 				renderHeight = Math.round(renderHeight * ratio);
 			}
 
-			console.log("Forced Render Buffer Size: " + renderWidth * 2 + ',' + renderHeight );
+			console.log("Forced Render Buffer Size: " + renderWidth + ',' + renderHeight );
 
 			currentPixelRatio = renderer.getPixelRatio();
 			renderer.getSize( currentSize );			
