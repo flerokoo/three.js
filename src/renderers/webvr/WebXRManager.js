@@ -48,7 +48,7 @@ function WebXRManager( renderer, gl ) {
 	cameraVR.layers.enable( 2 );
 
 	//
-
+	this.layerInit = {};
 	this.enabled = false;
 
 	this.getController = function ( id ) {
@@ -135,7 +135,7 @@ function WebXRManager( renderer, gl ) {
 			session.addEventListener( 'selectend', onSessionEvent );
 			session.addEventListener( 'end', onSessionEnd );
 
-			session.updateRenderState( { baseLayer: new XRWebGLLayer( session, gl ) } );
+			session.updateRenderState( { baseLayer: new XRWebGLLayer( session, gl, this.layerInit ) } );
 
 			session.requestReferenceSpace( referenceSpaceType ).then( onRequestReferenceSpace );
 
