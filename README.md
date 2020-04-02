@@ -19,6 +19,11 @@ _WebGLRenderer.renderStates_ exposed
 _WebVRManager.minRenderWidth_  
 Added `minRenderWidth` property to WebVRManager. It allows to specify minimum render buffer width. When `eyeParameters.renderWidth` is less than `minRenderWidth`, `minRenderWidth` will be used instead. Render buffer height will change accordingly, keeping aspect ratio the same.
 
+### WebXRManager
+
+_WebXRManager.setAnimationLoop_
+Callback, passed to this method, will receive not only `time` argument, but also `frame`.
+
 
 ### WebGLState
 
