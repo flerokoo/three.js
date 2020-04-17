@@ -23169,8 +23169,11 @@ function WebGLRenderer( parameters ) {
 	initGLContext();
 
 	// vr
-	var supportsSessionInNavigator = 'supportsSession' in navigator.xr || 'isSessionSupported' in navigator.xr;
-	var vr = ( typeof navigator !== 'undefined' && 'xr' in navigator && supportsSessionInNavigator ) ? new WebXRManager( _this, _gl ) : new WebVRManager( _this );
+	var xrInNavigator = 'xr' in navigator;
+	var supportsSessionInNavigator = xrInNavigator
+		? 'supportsSession' in navigator.xr || 'isSessionSupported' in navigator.xr
+		: false;
+	var vr = ( typeof navigator !== 'undefined' && xrInNavigator && supportsSessionInNavigator ) ? new WebXRManager( _this, _gl ) : new WebVRManager( _this );
 
 	this.vr = vr;
 
