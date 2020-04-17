@@ -12,6 +12,10 @@ Removed `WebVRManager.submitFrame()` call at the end of `WebGLRenderer.render()`
 
 _WebGLRenderer.renderStates_ exposed
 
+_Other_
+
+Now not only `supportsSession` checked while selecting between XR and VR, but `isSessionSupported` too
+
 
   
 ### WebVRManager

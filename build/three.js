@@ -23175,8 +23175,8 @@
 		initGLContext();
 
 		// vr
-
-		var vr = ( typeof navigator !== 'undefined' && 'xr' in navigator && 'supportsSession' in navigator.xr ) ? new WebXRManager( _this, _gl ) : new WebVRManager( _this );
+		var supportsSessionInNavigator = 'supportsSession' in navigator.xr || 'isSessionSupported' in navigator.xr;
+		var vr = ( typeof navigator !== 'undefined' && 'xr' in navigator && supportsSessionInNavigator ) ? new WebXRManager( _this, _gl ) : new WebVRManager( _this );
 
 		this.vr = vr;
 
